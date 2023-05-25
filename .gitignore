@@ -23,3 +23,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.vercel
+# instalando o formik para formulario
+ npm install formik --save 
+ yup yarn usado para validação de formulario
+ para instalar yarn add yup

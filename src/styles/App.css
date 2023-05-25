@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #323232;
+  border: none;
+}
+body {
+  background-size: cover;
+}
+/* tela principal */
+.login-container {
+  background-color: #fff;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 80px 30px 10px;
+  text-align: center;
+}
+
+/* titulo */
+
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/* tela de login */
+/* container login  */
+
+.login-fomr {
+  margin: 30px 0 15px 0;
+}
+label,
+input {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+label {
+  font-weight: bold;
+}
+input {
+  border-bottom: 2px solid #323232;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* não apaarece as bordas */
+input:focus {
+  outline: none;
+}
+/* aparece a borda so de baixo */
+input:focus {
+  boder-bottom: 2px solid #08558b;
+}
+a {
+  font-size: 0.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+a:hover {
+  color: #08558b;
+}
+
+/* botao */
+button {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  boder: none;
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #08558b;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #1b223c;
+  transition: 0.5s;
+}
+button:active {
+  background: green;
+}
+/* texto */
+.forgot-pass {
+  text-align: right;
+  display: block;
+  padding: 10px 0 20px;
+  /* margin-bottom: 10px; */
+}
+/* rede sociais  */
+
+#social-container,
+#social-container p {
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.redesocial {
+  margin-right: 20px;
+}
+/* passa o mouse porcima  */
+.redesocial:hover {
+  transition: 0.5s;
+  /* aumenta o botao em 40% */
+  transform: Scale(1.4);
+}
+
+/* comportamento ativo com o mouse clicado */
+.redesocial:active {
+  color: green;
+}
+
+/* registrar  */
+#cadastro-container p {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 600px) {
+}
+@media (min-width: 992px) {
+}
