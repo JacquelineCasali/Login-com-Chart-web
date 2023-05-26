@@ -1,8 +1,6 @@
 import React from "react";
 // rotas
-// inportando estilo
-import "../styles/reset.css";
-import "../styles/app.css";
+
 // linkando paginas
 import { Link } from "react-router-dom";
 // importando o formulario

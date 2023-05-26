@@ -5,9 +5,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
 import * as yup from "yup";
 
-// inportando estilo
-import "../styles/reset.css";
-import "../styles/app.css";
 const Senha = () => {
   const handClikRecuperar = (values) => console.log(values);
   // validação com yup

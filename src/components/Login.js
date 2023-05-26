@@ -9,8 +9,7 @@ import * as yup from "yup";
 // importando icones
 import * as Icon from "react-bootstrap-icons";
 // inportando estilo
-import "../styles/reset.css";
-import "../styles/app.css";
+
 const Login = () => {
   const handClikLogin = (values) => console.log(values);
   // validação com yup
