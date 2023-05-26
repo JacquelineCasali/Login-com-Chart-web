@@ -10,12 +10,18 @@ body {
   background-size: cover;
 }
 /* tela principal */
-.login-container {
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container {
   background-color: #fff;
-  width: 400px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
-  padding: 80px 30px 10px;
+  padding: 30px 30px 0px;
   text-align: center;
 }
 
@@ -42,12 +48,13 @@ input {
 
 label {
   font-weight: bold;
+  padding-bottom: 5px;
 }
 input {
   border-bottom: 2px solid #323232;
   padding: 10px;
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /* não apaarece as bordas */
@@ -56,7 +63,7 @@ input:focus {
 }
 /* aparece a borda so de baixo */
 input:focus {
-  boder-bottom: 2px solid #08558b;
+  boder-bottom: 2px solid #e60084;
 }
 a {
   font-size: 0.8rem;
@@ -75,7 +82,7 @@ button {
   height: 40px;
   width: 100%;
   border-radius: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   color: #fff;
   background-color: #08558b;
   cursor: pointer;
@@ -96,8 +103,8 @@ button:active {
 }
 /* rede sociais  */
 
-#social-container,
-#social-container p {
+.social-container,
+.social-container p {
   margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
 }
@@ -118,12 +125,75 @@ button:active {
 }
 
 /* registrar  */
-#cadastro-container p {
+.cadastro-container p {
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
 }
 
-@media (min-width: 600px) {
+/* cadastro */
+
+.full-box {
+  flex: 1 1 100%;
+  position: relative;
+}
+.half-box {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+.spacing {
+  margin-right: 4%;
+}
+
+.agreement {
+  margin-right: 5px;
+}
+.agreement,
+.agreement-label {
+  display: inline-block;
+  width: auto;
+}
+/* confirmar senha */
+.box-confirme {
+  flex: 1 1 45%;
+  position: relative;
+  display: contents;
+}
+/* validação */
+/* .form-error {
+  color: #ff1a1a;
+  position: relative;
+  top: -20px;
+  /* font-size: 30px; */
+
+/* confirme senha */
+.form-error,
+.form-error-senha {
+  color: #ff1a1a;
+  position: relative;
+  top: -20px;
+}
+
+.form-error-email {
+  color: #ff1a1a;
+  position: absolute;
+  top: 210px;
+}
+/* .form-error-senha {
+  color: #ff1a1a;
+  position: absolute;
+  top: 17px;
+} */
+/* .senha-error {
+  position: relative;
+  top: -30px;
+  color: #ff1a1a;
+  font-size: 30px;
+}
+.template {
+  display: none;
+} */
+*/ @media (min-width: 600px) {
 }
 @media (min-width: 992px) {
 }

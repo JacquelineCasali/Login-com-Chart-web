@@ -8,22 +8,27 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 // importando icones
 import * as Icon from "react-bootstrap-icons";
-
+// inportando estilo
+import "../styles/reset.css";
+import "../styles/app.css";
 const Login = () => {
   const handClikLogin = (values) => console.log(values);
   // validação com yup
+
   const validationLogin = yup.object().shape({
+    // validação cpf
     cpf: yup
       .string()
       .min(11, "Não é um CPF valido")
       .required("O campo é obrigatório."),
+    // validação senha
     password: yup
       .string()
       .min(4, "A senha deve conter no minimo 4 caracteres")
-      .required("O campo é obrigatório."),
+      .required("Digite sua senha campo obrigatório."),
   });
   return (
-    <div className="login-container">
+    <div className="container">
       <h1>Login</h1>
 
       <Formik
@@ -56,7 +61,7 @@ const Login = () => {
           Esqueceu a senha?
         </Link>
 
-        <div id="social-container">
+        <div className="social-container">
           <p>Ou entre pelas suas redes sociais</p>
           {/* icones da rede social com o link */}
           <a href="https://www.facebook.com/">
@@ -84,11 +89,9 @@ const Login = () => {
             />
           </a>
         </div>
-        <div id="cadastro-container">
+        <div className="cadastro-container">
           <p>Não possui conta?</p>
           <Link to="./cadastro">Cadastre-se</Link>
-
-          {/* <a href="./Cadastro">Cadastre-se</a> */}
         </div>
       </section>
     </div>
