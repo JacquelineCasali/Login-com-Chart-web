@@ -159,12 +159,6 @@ button:active {
   position: relative;
   display: contents;
 }
-/* validação */
-/* .form-error {
-  color: #ff1a1a;
-  position: relative;
-  top: -20px;
-  /* font-size: 30px; */
 
 /* confirme senha */
 .form-error,
@@ -179,21 +173,8 @@ button:active {
   position: absolute;
   top: 210px;
 }
-/* .form-error-senha {
-  color: #ff1a1a;
-  position: absolute;
-  top: 17px;
-} */
-/* .senha-error {
-  position: relative;
-  top: -30px;
-  color: #ff1a1a;
-  font-size: 30px;
-}
-.template {
-  display: none;
-} */
-*/ @media (min-width: 600px) {
+
+@media (min-width: 600px) {
 }
 @media (min-width: 992px) {
 }
