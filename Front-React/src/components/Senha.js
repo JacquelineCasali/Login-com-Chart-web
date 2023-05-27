@@ -1,6 +1,6 @@
 import React from "react";
 // importando o titulo
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 // importando o formulario
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
@@ -22,7 +22,9 @@ const Senha = () => {
   });
   return (
     <div className="container">
-      <Helmet title="Recuperar Senha" />
+      <HelmetProvider>
+        <Helmet title="Recuperar Senha" />
+      </HelmetProvider>
 
       <h1>Recuperar Senha</h1>
       <Formik
@@ -31,7 +33,7 @@ const Senha = () => {
         validationSchema={validationRecuperar}
       >
         <Form className="login-fomr">
-          <div class="half-box spacing">
+          <div className="half-box spacing">
             <label htmlFor="newPassword"> Nova Senha:</label>
             <Field
               name="newPassword"

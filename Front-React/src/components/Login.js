@@ -1,6 +1,6 @@
 import React from "react";
 // importando o titulo
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 // qual link ele vai chamar
 import { Link } from "react-router-dom";
 // importando o formulario
@@ -9,7 +9,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 // importando icones
 import * as Icon from "react-bootstrap-icons";
-// inportando estilo
+// inportando banco de dados
+// import Axios from "axios";
 
 const Login = () => {
   const handClikLogin = (values) => console.log(values);
@@ -29,7 +30,9 @@ const Login = () => {
   });
   return (
     <div className="container">
-      <Helmet title="Login" />
+      <HelmetProvider>
+        <Helmet title="Login" />
+      </HelmetProvider>
 
       <h1>Login</h1>
 

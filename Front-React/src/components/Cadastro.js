@@ -1,16 +1,29 @@
 import React from "react";
 // importando o titulo
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 // rotas
-// linkando paginas
-import { Link } from "react-router-dom";
+
 // importando o formulario
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
 import * as yup from "yup";
 
-const Cadastro = () => {
-  const handClikCadastro = (values) => console.log(values);
+// conectando  banco de dados
+import Axios from "axios";
+
+function Cadastro() {
+  const handClikCadastro = (values) => {
+    Axios.post("http://localhost:9000/cadastro", {
+      name: values.name,
+      cpf: values.cpf,
+      telefone: values.telefone,
+      email: values.email,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
   // validação com yup
   const validationCadastro = yup.object().shape({
     email: yup
@@ -27,7 +40,7 @@ const Cadastro = () => {
       .min(4, "A senha deve conter no minimo 4 caracteres")
       .required("O campo da senha é obrigatório."),
     // oneOf para confirmar a senha
-    confirmpassword: yup
+    confirmPassword: yup
       .string()
       .oneOf([yup.ref("password"), null, "As Senhas não confere"]),
   });
@@ -35,7 +48,9 @@ const Cadastro = () => {
   //   parte da web
   return (
     <main className="container">
-      <Helmet title="Cadastro de Usuário" />
+      <HelmetProvider>
+        <Helmet title="Cadastro de Usuário" />
+      </HelmetProvider>
 
       <h1>Cadastro</h1>
 
@@ -104,19 +119,19 @@ const Cadastro = () => {
           </div>
 
           <div className="half-box">
-            <label htmlFor="confirmpassword"> Confirme sua Senha:</label>
+            <label htmlFor="confirmPassword"> Confirme sua Senha:</label>
             <Field
               type="password"
-              name="confirmpassword"
+              name="confirmPassword"
               placeholder="Digite novamente sua senha"
             ></Field>
             <ErrorMessage
               component="span"
-              name="confirmpassword"
+              name="confirmPassword"
               className="form-error"
             />
           </div>
-
+          {/* 
           <label htmlFor="agreement" className="agreement-label">
             <Field
               type="checkbox"
@@ -125,17 +140,17 @@ const Cadastro = () => {
               required
               checked
             ></Field>
-            Eu li e aceito os <Link to="#">Termos de uso</Link>
-          </label>
+            Eu li e aceito os <a href="#">Termos de uso</a>
+          </label> */}
 
           <button className="registrar" type="submit">
-            Registrar
+            Cadastrar
           </button>
         </Form>
       </Formik>
       {/* <!-- recuperação de senha --> */}
     </main>
   );
-};
+}
 
 export default Cadastro;
