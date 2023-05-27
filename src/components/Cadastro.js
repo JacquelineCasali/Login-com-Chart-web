@@ -1,6 +1,7 @@
 import React from "react";
+// importando o titulo
+import Helmet from "react-helmet";
 // rotas
-
 // linkando paginas
 import { Link } from "react-router-dom";
 // importando o formulario
@@ -34,6 +35,8 @@ const Cadastro = () => {
   //   parte da web
   return (
     <main className="container">
+      <Helmet title="Cadastro de Usuário" />
+
       <h1>Cadastro</h1>
 
       <Formik

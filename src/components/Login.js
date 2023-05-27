@@ -1,5 +1,6 @@
 import React from "react";
-
+// importando o titulo
+import Helmet from "react-helmet";
 // qual link ele vai chamar
 import { Link } from "react-router-dom";
 // importando o formulario
@@ -28,6 +29,8 @@ const Login = () => {
   });
   return (
     <div className="container">
+      <Helmet title="Login" />
+
       <h1>Login</h1>
 
       <Formik

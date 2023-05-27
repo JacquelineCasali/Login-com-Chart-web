@@ -1,5 +1,6 @@
 import React from "react";
-
+// importando o titulo
+import Helmet from "react-helmet";
 // importando o formulario
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
@@ -21,6 +22,8 @@ const Senha = () => {
   });
   return (
     <div className="container">
+      <Helmet title="Recuperar Senha" />
+
       <h1>Recuperar Senha</h1>
       <Formik
         initialValues={{}}
