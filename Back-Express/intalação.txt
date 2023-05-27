@@ -1,0 +1,5 @@
+# Instalação 
+npm install nodemon - alteração automatica
+npm install cors - conecção do back com o front 
+npm install mysql - conecção com o banco de dados
+npm install express - pega o back end do node
