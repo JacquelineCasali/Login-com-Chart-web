@@ -9,11 +9,20 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 // importando icones
 import * as Icon from "react-bootstrap-icons";
+import Axios from "axios";
 // inportando banco de dados
 // import Axios from "axios";
 
 const Login = () => {
-  const handClikLogin = (values) => console.log(values);
+  const handClikLogin = (values) => {
+    Axios.post("http://localhost:9000/", {
+      cpf: values.cpf,
+      password: values.password,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
+
   // validação com yup
 
   const validationLogin = yup.object().shape({
