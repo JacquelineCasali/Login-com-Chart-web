@@ -13,7 +13,7 @@ import Axios from "axios";
 
 function Cadastro() {
   const handClikCadastro = (values) => {
-    Axios.post("http://localhost:9000/cadastro", {
+    Axios.post("http://localhost:8000/cadastro", {
       name: values.name,
       cpf: values.cpf,
       telefone: values.telefone,
