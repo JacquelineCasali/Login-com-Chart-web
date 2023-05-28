@@ -5,9 +5,16 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
 import * as yup from "yup";
-
+import Axios from "axios";
 const Senha = () => {
-  const handClikRecuperar = (values) => console.log(values);
+  const handClikRecuperar = (values) => {
+    Axios.post("http://localhost:9000/senha", {
+      newPassword: values.newPassword,
+      confirmNewPassword: values.confirmNewPassword,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
   // validação com yup
   const validationRecuperar = yup.object().shape({
     newPassword: yup
@@ -15,9 +22,9 @@ const Senha = () => {
       .min(4, "A senha deve conter no minimo 4 caracteres")
       .required("O campo da senha é obrigatório."),
     // oneOf para confirmar a senha
-    confirmPassword: yup
+    confirmNewPassword: yup
       .string()
-      .oneOf([yup.ref("password"), null, "As Senhas não confere"])
+      .oneOf([yup.ref("newPassword"), null, "As Senhas não confere"])
       .required("O campo da confirme sua senha é obrigatório."),
   });
   return (
@@ -48,15 +55,15 @@ const Senha = () => {
           </div>
 
           <div className="box-confirme">
-            <label htmlFor="confirmPassword"> Confirme sua Senha:</label>
+            <label htmlFor="confirmNewPassword"> Confirme sua Senha:</label>
             <Field
               type="password"
-              name="confirmPassword"
+              name="confirmNewPassword"
               placeholder="Digite novamente sua senha"
             ></Field>
             <ErrorMessage
               component="span"
-              name="confirmPassword"
+              name="confirmNewPassword"
               className="form-error-senha"
             />
           </div>

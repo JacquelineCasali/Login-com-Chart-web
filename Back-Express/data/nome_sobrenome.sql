@@ -54,11 +54,12 @@ confirmNewPassword VARCHAR(200),
 created_at DATETIME,
 update_at DATETIME,
 modified_at DATETIME,
-cadastro_id INT UNSIGNED
+users_id INT UNSIGNED
 );
 
-INSERT INTO senha (newPassword,confirmNewPassword,created_at,modified_at,cadastro_id)
+INSERT INTO senha (newPassword,confirmNewPassword,created_at,modified_at,users_id)
 VALUES
 ("134","134","2022-09-12","2022-09-12",1);
 
 SELECT * FROM senha;
+

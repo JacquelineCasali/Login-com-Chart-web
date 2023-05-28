@@ -5,3 +5,4 @@ npm install mysql - conecção com o banco de dados
 npm install express - pega o back end do node
 npm install axios conecção do back com o front
 npm install react-axios conecção do back com o front
+npm install bcrypt cripitografar senha

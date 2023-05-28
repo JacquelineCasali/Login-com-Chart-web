@@ -19,7 +19,7 @@ const Login = () => {
       cpf: values.cpf,
       password: values.password,
     }).then((response) => {
-      console.log(response);
+      alert(response.data);
     });
   };
 

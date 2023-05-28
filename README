@@ -6,6 +6,6 @@ formik para formulario
 mysql
 node 
 express
-
+bcrypt - cripitografar a senha
 necessario instalar o 
 npm install 

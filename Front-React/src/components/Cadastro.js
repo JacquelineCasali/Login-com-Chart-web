@@ -21,7 +21,8 @@ function Cadastro() {
       password: values.password,
       confirmPassword: values.confirmPassword,
     }).then((response) => {
-      console.log(response);
+      // console.log(response);
+      alert(response.data.msg);
     });
   };
   // validação com yup
