@@ -6,3 +6,6 @@ formik para formulario
 mysql
 node 
 express
+
+necessario instalar o 
+npm install 
