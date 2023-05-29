@@ -1,0 +1,70 @@
+.chart {
+  background: #ffffff;
+
+  /* width: 90%; */
+  margin: 0;
+  display: flex;
+  height: 100%;
+}
+.menu {
+  width: 20%;
+}
+
+.usuario {
+  /* posição do elemento  */
+  /* position: relative; */
+
+  line-height: 2.5;
+  padding: 20px;
+}
+
+/* texto  logo */
+.usuario .titulo {
+  /* color: #ffffff; */
+  /* padding: 10px; */
+  text-align: center;
+  /* letra maiscula */
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.lista {
+  /* border: 2px solid blue; */
+  padding-top: 10px;
+  /*   
+  margin-left: 10px; */
+  text-align: center;
+}
+.link-usuario {
+  margin-left: 10px;
+}
+
+.usuario .link-usuario {
+  /* color: #ffffff; */
+  font-weight: bold;
+  text-decoration: none;
+  /* display: inline; */
+  text-align: center;
+  font-size: 16px;
+  transition: 400ms;
+  vertical-align: text-bottom;
+}
+
+/* hover mouse en cima do elemento  */
+/* mouse por cima dos links dentro do menu de navegacao */
+
+.lista:hover {
+  background: #bbbbbb;
+}
+
+.link-usuario:hover {
+  color: blue;
+}
+
+/* chart */
+.conversar {
+  margin: 20px;
+  width: 80%;
+}
+.titulo-chart {
+  text-align: center;
+}

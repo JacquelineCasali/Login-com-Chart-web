@@ -3,6 +3,10 @@ import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 // importando o formulario
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Link } from "react-router-dom";
+// importando estilo
+import "../styles/reset.css";
+import "../styles/App.css";
 // importando as validações
 import * as yup from "yup";
 import Axios from "axios";
@@ -70,6 +74,13 @@ const Senha = () => {
           <button type="submit"> Salvar </button>
         </Form>
       </Formik>
+
+      <p>
+        Não possui conta?
+        <Link to="../cadastro" className="telalogin">
+          Cadastre-se
+        </Link>
+      </p>
     </div>
   );
 };

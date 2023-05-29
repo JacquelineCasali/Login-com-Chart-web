@@ -36,7 +36,7 @@ h1 {
 /* container login  */
 
 .login-fomr {
-  margin: 30px 0 15px 0;
+  margin: 20px 0 15px 0;
 }
 label,
 input {
@@ -65,11 +65,11 @@ input:focus {
 input:focus {
   boder-bottom: 2px solid #e60084;
 }
-a {
+Link {
   font-size: 0.8rem;
   font-family: "Montserrat", sans-serif;
 }
-a:hover {
+Link:hover {
   color: #08558b;
 }
 
@@ -95,12 +95,16 @@ button:active {
   background: green;
 }
 /* texto */
+
+/* .forgot-pass a {
+  margin-bottom: 0;
+} */
 .forgot-pass {
   text-align: right;
   display: block;
   padding: 10px 0 20px;
-  /* margin-bottom: 10px; */
 }
+
 /* rede sociais  */
 
 .social-container,
@@ -128,6 +132,12 @@ button:active {
 .cadastro-container p {
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+.telalogin {
+  margin-left: 30px;
+  font-size: 16px;
+  color: blue;
 }
 
 /* cadastro */
@@ -146,7 +156,7 @@ button:active {
 }
 
 .agreement {
-  margin-right: 5px;
+  margin: 0 10px 15px 0;
 }
 .agreement,
 .agreement-label {

@@ -2,16 +2,18 @@ import React from "react";
 // importando o titulo
 import { Helmet, HelmetProvider } from "react-helmet-async";
 // rotas
-
+import { Link } from "react-router-dom";
 // importando o formulario
 import { Formik, Form, Field, ErrorMessage } from "formik";
 // importando as validações
 import * as yup from "yup";
-
 // conectando  banco de dados
 import Axios from "axios";
+// importando estilo
+import "../styles/reset.css";
+import "../styles/App.css";
 
-function Cadastro() {
+const Cadastro = () => {
   const handClikCadastro = (values) => {
     Axios.post("http://localhost:9000/cadastro", {
       name: values.name,
@@ -132,7 +134,7 @@ function Cadastro() {
               className="form-error"
             />
           </div>
-          {/* 
+
           <label htmlFor="agreement" className="agreement-label">
             <Field
               type="checkbox"
@@ -141,8 +143,8 @@ function Cadastro() {
               required
               checked
             ></Field>
-            Eu li e aceito os <a href="#">Termos de uso</a>
-          </label> */}
+            Eu li e aceito os <Link to="#">Termos de uso</Link>
+          </label>
 
           <button className="registrar" type="submit">
             Cadastrar
@@ -150,8 +152,15 @@ function Cadastro() {
         </Form>
       </Formik>
       {/* <!-- recuperação de senha --> */}
+
+      <p>
+        Já possui conta?
+        <Link to="../" className="telalogin">
+          Fazer login
+        </Link>
+      </p>
     </main>
   );
-}
+};
 
 export default Cadastro;

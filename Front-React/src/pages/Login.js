@@ -9,13 +9,16 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 // importando icones
 import * as Icon from "react-bootstrap-icons";
-import Axios from "axios";
 // inportando banco de dados
-// import Axios from "axios";
+import Axios from "axios";
+
+// importando estilo
+import "../styles/reset.css";
+import "../styles/App.css";
 
 const Login = () => {
   const handClikLogin = (values) => {
-    Axios.post("http://localhost:9000/", {
+    Axios.post("https://back-login.onrender.com/", "http://localhost:9000/", {
       cpf: values.cpf,
       password: values.password,
     }).then((response) => {
@@ -70,7 +73,7 @@ const Login = () => {
         </Form>
       </Formik>
       {/* <!-- recuperação de senha --> */}
-      <section>
+      <section className="social">
         <Link to="./senha" className="forgot-pass">
           Esqueceu a senha?
         </Link>
@@ -78,30 +81,30 @@ const Login = () => {
         <div className="social-container">
           <p>Ou entre pelas suas redes sociais</p>
           {/* icones da rede social com o link */}
-          <a href="https://www.facebook.com/">
+          <Link to="https://www.facebook.com/">
             <Icon.Facebook
               color="royalblue"
               size={40}
               cursor="pointer"
               className="redesocial"
             />
-          </a>
-          <a href="https://www.linkedin.com/home">
+          </Link>
+          <Link to="https://www.linkedin.com/home">
             <Icon.Linkedin
               color="#0077b5"
               size={40}
               cursor="pointer"
               className="redesocial"
             />
-          </a>
-          <a href="https://www.google.com/intl/pt-BR/gmail/about/">
+          </Link>
+          <Link to="https://www.google.com/intl/pt-BR/gmail/about/">
             <Icon.Google
               color="red"
               size={40}
               cursor="pointer"
               className="redesocial"
             />
-          </a>
+          </Link>
         </div>
         <div className="cadastro-container">
           <p>Não possui conta?</p>
