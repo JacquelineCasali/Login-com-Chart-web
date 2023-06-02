@@ -1,11 +1,38 @@
-React 
-utilizado o 
-bootstrap icones 
-yup para validação 
-formik para formulario
-mysql
-node 
-express
-bcrypt - cripitografar a senha
-necessario instalar o 
-npm install 
+Sistema de Login com Chart com React e Express
+
+Formulário para login com React Js e MONGODB.
+Este Projeto consiste em um formulário de login com o banco.
+Frontend da aplicação construída inteiramente com react JS e CSS. Backend com NODE JS E MONGODB.
+
+# Site do Sistema
+
+https://login-com-chart-web.vercel.app/
+
+git clone
+https://github.com/JacquelineCasali/Login-com-Chart-web
+
+# Referência
+
+NODE
+React
+Mysql
+Express
+Node.js
+
+# Instalação
+
+# Instale Front-React
+
+cd Front-React
+npm install
+
+Rodar o projeto
+npm star
+
+# login
+
+para logar por enquanto qualquer cpf senha 123
+Instale Server
+cd Back-Express
+npm install Server  
+ npm start

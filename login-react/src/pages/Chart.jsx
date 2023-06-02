@@ -21,7 +21,7 @@ function Chart() {
           <nav className="usuario">
             <h1 className="titulo">Usuários</h1>
 
-            <ul class="lista-usuario">
+            <ul className="lista-usuario">
               <li className="lista">
                 <Icon.Person
                   // background="black"

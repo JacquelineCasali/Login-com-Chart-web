@@ -1,45 +1,31 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+// importando as validações
+import { AuthContext } from "../contexts/auth";
 // importando o titulo
 import { Helmet, HelmetProvider } from "react-helmet-async";
 // qual link ele vai chamar
 import { Link } from "react-router-dom";
-// importando o formulario
-import { Formik, Form, Field, ErrorMessage } from "formik";
-// importando as validações
-import * as yup from "yup";
+
 // importando icones
 import * as Icon from "react-bootstrap-icons";
-// inportando banco de dados
-import Axios from "axios";
-
 // importando estilo
 import "../styles/reset.css";
 import "../styles/App.css";
 
 const Login = () => {
-  const handClikLogin = (values) => {
-    Axios.post("https://back-login.onrender.com/", "http://localhost:9000/", {
-      cpf: values.cpf,
-      password: values.password,
-    }).then((response) => {
-      alert(response.data);
-    });
+  const { authenticated, login } = useContext(AuthContext);
+  //  useState armazena valores
+  const [cpf, setCpf] = useState("");
+  const [password, setPassword] = useState("");
+
+  // enviando o login
+  const handleSubmit = (e) => {
+    // intercepitação do evento
+    e.preventDefault();
+    console.log("submit", { cpf, password });
+    login(cpf, password); // integração com context e com a api
   };
 
-  // validação com yup
-
-  const validationLogin = yup.object().shape({
-    // validação cpf
-    cpf: yup
-      .string()
-      .min(11, "Não é um CPF valido")
-      .required("O campo é obrigatório."),
-    // validação senha
-    password: yup
-      .string()
-      .min(4, "A senha deve conter no minimo 4 caracteres")
-      .required("Digite sua senha campo obrigatório."),
-  });
   return (
     <div className="container">
       <HelmetProvider>
@@ -47,31 +33,31 @@ const Login = () => {
       </HelmetProvider>
 
       <h1>Login</h1>
+      <p>{String(authenticated)}</p>
+      <form className="login-fomr" onSubmit={handleSubmit}>
+        <label htmlFor="cpf">CPF:</label>
+        <input
+          type="text"
+          name="cpf"
+          id="cpf"
+          value={cpf}
+          // preencher o valor
+          onChange={(e) => setCpf(e.target.value)}
+          placeholder="Digite seu CPF"
+        />
+        {/* Field cria campo input do html  */}
+        <label htmlFor="password">Senha:</label>
+        <input
+          name="password"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Digite sua Senha"
+        />
 
-      <Formik
-        initialValues={{}}
-        onSubmit={handClikLogin}
-        validationSchema={validationLogin}
-      >
-        <Form className="login-fomr">
-          <label htmlFor="cpf">CPF:</label>
-          <Field type="text" name="cpf" placeholder="Digite seu CPF"></Field>
-          {/* Field cria campo input do html  */}
-          <ErrorMessage component="span" name="cpf" className="form-error" />
-          <label htmlFor="password">Senha:</label>
-          <Field
-            name="password"
-            type="password"
-            placeholder="Digite sua Senha"
-          ></Field>
-          <ErrorMessage
-            component="span"
-            name="password"
-            className="form-error"
-          />
-          <button type="submit"> Login </button>
-        </Form>
-      </Formik>
+        <button type="submit"> Login </button>
+      </form>
       {/* <!-- recuperação de senha --> */}
       <section className="social">
         <Link to="./senha" className="forgot-pass">
@@ -114,5 +100,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
